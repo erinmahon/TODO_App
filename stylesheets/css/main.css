@@ -42,6 +42,9 @@ img.cover {
   -webkit-filter: opacity(0.5);
   filter: opacity(0.5); }
 
+body.ng-scope {
+  background-color: #000000; }
+
 .container-fluid {
   background-color: #ffffff;
   border-top: 2px solid #d6bfab;

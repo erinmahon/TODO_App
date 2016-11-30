@@ -4,7 +4,7 @@
 // Page Styling
 
 html {
-	background-color: #000000;
+	background-color: $default-black;
 }
 
 // Header
@@ -32,6 +32,10 @@ img.cover {
 	margin-top: -30%;
 	-webkit-filter: opacity(.5);
 	filter: opacity(.5);
+}
+
+body.ng-scope {
+	background-color: $default-black;
 }
 
 // To Do List - Main Content Section
