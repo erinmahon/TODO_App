@@ -6,6 +6,17 @@ li {
   font-family: "Open Sans", sans-serif;
   font-size: 18px; }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.722em; }
+
+li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px; }
+
+.todo_tasks {
+  border: 2px solid black; }
+
 html {
   background-color: #000000; }
 
@@ -35,6 +46,7 @@ img.cover {
   margin-top: -25%;
   position: relative;
   border-bottom: 10px solid #1eacaa;
-  height: 500px; }
+  height: 500px;
+  padding-top: 5%; }
 
 /*# sourceMappingURL=main.css.map */
