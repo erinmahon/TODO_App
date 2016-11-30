@@ -26,50 +26,51 @@
 	    <script type="text/javascript" src="javascripts/angular.min.js"></script>
 	    <script type="text/javascript" src="javascripts/app.js"></script>
 	</head>
-	<body>
+	<!-- ng-app directive tells AngularJS that this is the root element of the AngularJS application. All AngularJS applications must have a root element. -->
+	<body ng-app="toDoApp">
 		<header>
 			<img class="brolik_logo" src="images/Logo.svg">
 		</header>
 		<div class="cover_photo">
 			<img class="cover" src="images/cover_photo.jpg">
 		</div>
-		<div class="container-fluid">
+		<div class="container-fluid" ng-controller="ToDoController">
 
-			<!-- Display todo tasks with available actions: create, mark as complete, remove, edit -->
-			<div class="display_todo_tasks">
-				<ul class="list-group">
-	  				<li class="list-group-item clearfix task">
-	    				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-	    				<div>
-	      					<span class="pull-right">
-	       					<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></button>
-	        				<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-ok"></span></button>
-	        				<button class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-repeat"></span></button>
-	        				<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
-	      					</span>
-	    				</div>
-	  				</li>
-				</ul>
-			</div>
-			
 			<!-- Form to create a todo task to add to a todo list -->
-			<div class="add_todo_task"
-				<div class="form">
-	  				<div class="input-group">
-	   					<input type="text" class="form-control">
-	   					<span class="input-group-btn">
-	      					<button class="btn btn-default" type="button">
-	        				<span class="glyphicon glyphicon-plus"></span> Add Task</button>
-	    				</span>
-	  				</div>
-				</div>
+			<div class="add_todo_task col-xs-12 col-sm-12 col-md-offset-3 col-md-5 col-lg-offset-3 col-lg-5">"
+				<!-- Form Starts Here -->
+      			<div class="form">
+        			<div class="input-group">
+          				<input type="text" class="form-control" ng-model="task">
+          				<span class="input-group-btn">
+            				<button class="btn btn-default" type="button" ng-click="addTask()"><span class="glyphicon glyphicon-plus"></span> Add Task</button>
+          				</span>
+        			</div><!-- /input-group -->
+      			</div>
+	      		<hr/>
+	      		<!-- Form Ends Here -->
+
+				<!-- Display todo tasks with available actions: create, mark as complete, remove, edit -->
+				<!-- 	To make the form to create and the area to display the Handle ToDo List by using an array of ToDo Objects where each object will have individual properties. Works with form through handler function to add ToDo object to the array of ToDo tasks.   -->
+				<!-- Display the list of tasks using the ng-repeat directive of angular to populate the list of tasks. -->
+				
+				<!-- Task List Starts Here -->
+				<ul class="list-group" ng-show="tasks.length > 0">
+					<li class="list-group-item clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
+						<p class="lead">{{todo.task}}</p>
+						<div>
+							<span class="pull-right">
+								<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" ng-click="editTask($index)"></span></button>
+								<button class="btn btn-primary btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok" ng-click="doneTask($index)"></span></button>
+								<button class="btn btn-primary btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat" ng-click="unDoneTask($index)"></span></button>
+								<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" ng-click="deleteTask($index)"></span></button>
+							</span>
+						</div>
+					</li>
+				</ul>
+				<!-- Task List Ends Here -->
 			</div>
-			
-			
-			
-		
 		</div>
-		
 		
 	</body>
 </html>
