@@ -21,7 +21,7 @@ header {
    		max-width: 100px;
    		display: block;
   		margin: 0 auto;
-  		padding: 3.5% 0% 2% 0%;
+  		padding: 3.25% 0% 2% 0%;
    	}
 }
 
@@ -41,6 +41,6 @@ img.cover {
 	margin-top: -25%;
 	position: relative;
 	border-bottom: 10px solid $default-teal;
-	height: 500px;
 	padding-top: 5%;
+	min-height: 400px;
 }

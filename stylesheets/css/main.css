@@ -15,7 +15,9 @@ li {
   font-size: 18px; }
 
 .todo_tasks {
-  border: 2px solid black; }
+  border: 2px solid black;
+  margin-bottom: 5%;
+  position: relative; }
 
 html {
   background-color: #000000; }
@@ -32,7 +34,7 @@ header {
     max-width: 100px;
     display: block;
     margin: 0 auto;
-    padding: 3.5% 0% 2% 0%; }
+    padding: 3.25% 0% 2% 0%; }
 
 img.cover {
   width: 100%;
@@ -46,7 +48,7 @@ img.cover {
   margin-top: -25%;
   position: relative;
   border-bottom: 10px solid #1eacaa;
-  height: 500px;
-  padding-top: 5%; }
+  padding-top: 5%;
+  min-height: 400px; }
 
 /*# sourceMappingURL=main.css.map */
