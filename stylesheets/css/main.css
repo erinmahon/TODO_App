@@ -19,6 +19,10 @@ li {
   margin-bottom: 5%;
   position: relative; }
 
+img.icon {
+  max-height: 12px;
+  padding: 0% 20%; }
+
 html {
   background-color: #000000; }
 

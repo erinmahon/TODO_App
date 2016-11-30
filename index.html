@@ -58,10 +58,8 @@
 								<p class="lead">{{todo.task}}</p>
 								<div>
 									<span class="pull-right">
-										<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil" ng-click="editTask($index)"></span></button>
-										<button class="btn btn-primary btn-xs" ng-show="!todo.done"><span class="glyphicon glyphicon-ok" ng-click="doneTask($index)"></span></button>
-										<button class="btn btn-primary btn-xs" ng-show="todo.done"><span class="glyphicon glyphicon-repeat" ng-click="unDoneTask($index)"></span></button>
-										<button class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" ng-click="deleteTask($index)"></span></button>
+										<span type="button" ng-show="!todo.done"><img class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
+        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
 									</span>
 								</div>
 							</li>
@@ -78,9 +76,11 @@
 		        			<div class="input-group">
 		          				<input type="text" class="form-control" ng-model="task">
 		          				<span class="input-group-btn">
-		            				<button type="button" ng-click="addTask()"><img src="images/icon_add.svg"></button>
-		            				<button class="btn btn-danger btn-xs"><img src="images/icon_close.svg" ng-click="deleteTask($index)"></span></button>
-		          				</span >
+		          					<span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg" ></span>
+		          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
+		          				</span>
+		          				
+		            				
 		          				
 		        			</div><!-- /input-group -->
 		      			</div>
