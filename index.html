@@ -10,10 +10,13 @@
 	    
 	    <!-- Styling -->
 	    <link rel="stylesheet" href="stylesheets/css/main.css">
-	    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
 	    <!-- Bootstrap - Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<!-- Bootstrap - jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 		<!-- Bootstrap - Latest compiled JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,7 +33,21 @@
 		<div class="cover_photo">
 			<img class="cover" src="images/cover_photo.jpg">
 		</div>
-		<div class="container">
+		<div class="container-fluid">
+			<!-- Form to create a todo task to add to a todo list -->
+			<div class="add_todo_task"
+				<div class="form">
+	  				<div class="input-group">
+	   					<input type="text" class="form-control">
+	   					<span class="input-group-btn">
+	      					<button class="btn btn-default" type="button">
+	        				<span class="glyphicon glyphicon-plus"></span> Add Task</button>
+	    				</span>
+	  				</div>
+				</div>
+			</div>
+			<hr/>
+			<!-- Display todo tasks with available actions: create, mark as complete, remove, edit -->
 		</div>
 		
 	</body>

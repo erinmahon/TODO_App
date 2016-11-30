@@ -20,7 +20,7 @@ header {
    		max-width: 100px;
    		display: block;
   		margin: 0 auto;
-  		padding: 3% 0% 2% 0%;
+  		padding: 3.5% 0% 2% 0%;
    	}
 }
 
@@ -33,3 +33,12 @@ img.cover {
 	filter: opacity(.5);
 }
 
+// To Do List - Main Content Section
+.container-fluid {
+	background-color: $default-white;
+	border-top: 2px solid $default-tan;
+	margin-top: -25%;
+	position: relative;
+	border-bottom: 10px solid $default-teal;
+	height: 500px;
+}
