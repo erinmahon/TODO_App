@@ -1,0 +1,19 @@
+// Define color variables
+$default-teal: #1eacaa;
+$default-white: #ffffff;
+$default-tan: #d6bfab;
+$default-gray: #ededed;
+
+// Define typeface variables
+$font-stack: "Open Sans";
+
+// Define typeface styles
+h1 {
+	font-family: $font-stack;
+	font-size: 1.722em;
+}
+
+li {
+	font-family: $font-stack;
+	font-size: 18px;
+}
