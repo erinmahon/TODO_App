@@ -15,13 +15,12 @@ h1 {
   font-size: 1.722em; }
 
 .todo_tasks {
-  border: 2px solid black;
   margin-bottom: 5%;
   position: relative; }
 
 img.icon {
-  max-height: 12px;
-  margin: 0% 25%; }
+  max-height: 18px;
+  padding: 10%; }
 
 li.borderless {
   border: none; }
@@ -29,9 +28,6 @@ li.borderless {
 input.borderless {
   border: none;
   box-shadow: none; }
-
-div.border-top {
-  border-top: 2px solid #d6bfab; }
 
 .italic {
   font-style: italic; }
@@ -46,6 +42,9 @@ a.underline:active {
 
 a.underline:hover {
   border-bottom: 1px solid #ededed; }
+
+div.border-bottom {
+  border-bottom: 2px solid #d6bfab; }
 
 html {
   background-color: #000000; }

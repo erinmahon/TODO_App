@@ -46,7 +46,7 @@
 
 			<div class="todo_tasks">
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-md-offset-2 col-lg-5">
+					<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-md-offset-2 col-lg-5 border-bottom">
 						<h1> TaskList {{TaskListName}} </h1>
 						<div class="pull-right">
 							<span type="button" ng-click="editTask($index)"><a class="underline" href="">edit</a></span>
@@ -56,7 +56,7 @@
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-md-offset-2 col-lg-5">
+					<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-md-offset-2 col-lg-5 border-bottom">
 						<ul class="list-group" ng-show="tasks.length > 0">
 							<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 								<div>
@@ -77,10 +77,10 @@
 					<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-5 col-md-offset-2 col-lg-5">
 						<!-- Form Starts Here -->
 	      				<div class="form">
-		        			<div class="input-group borderless border-top">
+		        			<div class="input-group borderless">
 		          				<input type="text" class="form-control borderless italic" ng-model="task" placeholder="Click here to add new item">
 		          				<div class="input-group-btn">
-		          					<span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg" ></span>
+		          					<!-- <span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg"></span> -->
 		          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
 		          				</div>
 		        			</div><!-- /input-group -->

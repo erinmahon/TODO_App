@@ -1,15 +1,14 @@
 @import 'variables';
 
 .todo_tasks {
-	border: 2px solid black;
 	// margin-left: 20%;
 	margin-bottom: 5%;
 	position: relative;
 }
 
 img.icon {
-	max-height: 12px;
-	margin: 0% 25%;
+	max-height: 18px;
+	padding: 10%;
 }
 
 li.borderless {
@@ -19,9 +18,6 @@ li.borderless {
 input.borderless {
 	border: none;
 	box-shadow: none;
-}
-div.border-top {
-	border-top: 2px solid $default-tan;
 }
 
 .italic {
@@ -41,6 +37,9 @@ a.underline:hover {
   border-bottom: 1px solid $default-gray;
 }
 
+div.border-bottom {
+	border-bottom: 2px solid $default-tan;
+}
 
 
 
