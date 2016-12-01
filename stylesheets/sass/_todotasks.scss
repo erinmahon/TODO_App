@@ -9,6 +9,40 @@
 
 img.icon {
 	max-height: 12px;
-	padding: 0% 20%;
-	
+	margin: 0% 25%;
 }
+
+li.borderless {
+	border: none;
+}
+
+input.borderless {
+	border: none;
+	box-shadow: none;
+}
+div.border-top {
+	border-top: 2px solid $default-tan;
+}
+
+.italic {
+	font-style: italic;
+}
+
+a.underline:active {
+	border-bottom: 1px solid $default-gray;
+	-webkit-transition: border 500ms ease;
+	-moz-transition: border 500ms ease;
+	-ms-transition: border 500ms ease;
+	-o-transition: border 500ms ease;
+	transition: border 500ms ease; 
+}
+
+a.underline:hover {
+  border-bottom: 1px solid $default-gray;
+}
+
+
+
+
+
+

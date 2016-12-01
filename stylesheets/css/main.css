@@ -1,8 +1,4 @@
-h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.722em; }
-
-li {
+body, p, li {
   font-family: "Open Sans", sans-serif;
   font-size: 18px; }
 
@@ -10,9 +6,13 @@ h1 {
   font-family: "Open Sans", sans-serif;
   font-size: 1.722em; }
 
-li {
+body, p, li {
   font-family: "Open Sans", sans-serif;
   font-size: 18px; }
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.722em; }
 
 .todo_tasks {
   border: 2px solid black;
@@ -21,7 +21,31 @@ li {
 
 img.icon {
   max-height: 12px;
-  padding: 0% 20%; }
+  margin: 0% 25%; }
+
+li.borderless {
+  border: none; }
+
+input.borderless {
+  border: none;
+  box-shadow: none; }
+
+div.border-top {
+  border-top: 2px solid #d6bfab; }
+
+.italic {
+  font-style: italic; }
+
+a.underline:active {
+  border-bottom: 1px solid #ededed;
+  -webkit-transition: border 500ms ease;
+  -moz-transition: border 500ms ease;
+  -ms-transition: border 500ms ease;
+  -o-transition: border 500ms ease;
+  transition: border 500ms ease; }
+
+a.underline:hover {
+  border-bottom: 1px solid #ededed; }
 
 html {
   background-color: #000000; }
