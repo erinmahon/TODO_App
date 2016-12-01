@@ -7,6 +7,16 @@ html {
 	background-color: $default-black;
 }
 
+.body {
+	font-family: $font-stack;
+	font-size: 18px;
+	h1#style-overrides {
+		font-size: 1.722em;
+	}
+}
+
+
+
 // Header
 
 header {
@@ -45,6 +55,7 @@ body.ng-scope {
 	margin-top: -25%;
 	position: relative;
 	border-bottom: 10px solid $default-teal;
-	padding-top: 5%;
+	padding: 5% 0%;
 	min-height: 400px;
 }
+

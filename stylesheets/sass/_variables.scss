@@ -8,15 +8,3 @@ $default-gray: #ededed;
 // Define typeface variables
 $font-stack: 'Open Sans', sans-serif;
 
-// Define typeface styles
-
-body, p, li {
-	font-family: $font-stack;
-	font-size: 18px;
-}
-
-h1 {
-	font-family: $font-stack;
-	font-size: 1.722em;
-}
-
