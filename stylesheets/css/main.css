@@ -39,7 +39,7 @@ html {
 .body {
   font-family: "Open Sans", sans-serif;
   font-size: 18px; }
-  .body h1#style-overrides {
+  .body h1.h1 {
     font-size: 1.722em; }
 
 header {
@@ -73,5 +73,8 @@ body.ng-scope {
   border-bottom: 10px solid #1eacaa;
   padding: 5% 0%;
   min-height: 400px; }
+
+div.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

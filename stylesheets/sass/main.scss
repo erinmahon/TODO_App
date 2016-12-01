@@ -10,12 +10,10 @@ html {
 .body {
 	font-family: $font-stack;
 	font-size: 18px;
-	h1#style-overrides {
+	h1.h1 {
 		font-size: 1.722em;
 	}
 }
-
-
 
 // Header
 
@@ -49,6 +47,7 @@ body.ng-scope {
 }
 
 // To Do List - Main Content Section
+
 .container-fluid {
 	background-color: $default-white;
 	border-top: 2px solid $default-tan;
@@ -57,5 +56,9 @@ body.ng-scope {
 	border-bottom: 10px solid $default-teal;
 	padding: 5% 0%;
 	min-height: 400px;
+}
+
+div.hidden {
+	display: none;
 }
 

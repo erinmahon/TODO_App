@@ -26,7 +26,6 @@
 	    <script type="text/javascript" src="javascripts/angular.min.js"></script>
 	    <script type="text/javascript" src="javascripts/app.js"></script>
 	</head>
-	<!-- ng-app directive tells AngularJS that this is the root element of the AngularJS application. All AngularJS applications must have a root element. -->
 	<body class="body" ng-app="toDoApp">
 		<header>
 			<img class="brolik_logo" src="images/Logo.svg">
@@ -37,35 +36,31 @@
 		<div class="container-fluid" ng-controller="ToDoController">
 
 
-		<!-- Display todo tasks with available actions: create, mark as complete, remove, edit -->
-		<!-- 	To make the form to create and the area to display the Handle ToDo List by using an array of ToDo Objects where each object will have individual properties. Works with form through handler function to add ToDo object to the array of ToDo tasks.   -->
-		<!-- Display the list of tasks using the ng-repeat directive of angular to populate the list of tasks. -->
-			
-				<!-- ToDo Tasks List Starts Here -->
-			
+		<!-- 	START TASK LIST -->
 			<div class="row">
 				<div id="todo_tasks" class="col-md-7 col-lg-7">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
-							<div class="form">
-								<div class="input group">
-									<h1 id="style-overrides">Task List</h1>
-
-									<div class="pull-right">
-										<span type="button" ng-click="editTask($index)"><a class="underline" href="">edit</a></span>
-										<span type="button" ng-click=""><a class="underline" href="">save</a></span>
-									</div>
-								</div>
+							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
+								<h1>{{todo.list}}</h1>
 							</div>
+							<div class="pull-right">
+								<!-- EDIT TASK -->
+								<span ng-click="editTask($index)"><a class="underline" href="">edit</a></span>
+								<!-- SAVE TASK -->
+								<span type="button" ng-click=""><a class="underline" href="">save</a></span>
+							</div>	
 						</div>
 					</div>
 					<br>
+
+				<!-- 	START DISPLAY TASKS -->
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
 							<ul class="list-group" ng-show="tasks.length > 0">
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
-										<p class="lead pull-left">{{todo.task}}</p>
+										<p class="lead pull-left">{{$index + 1}}. {{todo.task}}</p>
 										<div class="pull-right">
 											<span type="button" ng-show="!todo.done"><img class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
@@ -75,68 +70,80 @@
 							</ul>
 						</div>
 					</div>
-					
-					<!-- Task List Ends Here -->
+					<!-- END DISPLAY TASKS -->
 
-					<!-- Form to create a todo task to add to a todo list -->
+
+
+					<!-- INPUT FORM - CREATE TASKS -->
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8">
-							<!-- Form Starts Here -->
 		      				<div class="form">
 			        			<div class="input-group borderless">
-			          				<input type="text" class="form-control borderless italic" ng-model="task" placeholder="Click here to add new item">
+			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Click here to add new item">
 			          				<div class="input-group-btn">
 			          					<span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg"></span>
 			          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
 			          				</div>
-			        			</div><!-- /input-group -->
+			        			</div>
 			      			</div>
 			      		</div>
-			      		<!-- Form Ends Here -->
 		      		</div>
 	      		</div>	
-				
 
+				<!-- BEGIN LISTS -->
 
-				<!-- Task Lists List Starts Here -->
 				<div id="task_lists" class="col-md-5 col-lg-5">
-					<div class="row">
 					
+					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
 							<h1 id="style-overrides">Current Lists</h1>
 							<div class="pull-right">
-								<span type="button" ng-click="editTask($index)"><a class="underline" href="">edit</a></span>
-								<span type="button"><a class="underline" href="">+ add list</a></span>
+								<span type="button" ng-click="editList($index)"><a class="underline" href="">edit</a></span>
+								<span id="new-list-btn" type="button"><a href="">+ add list</a></span>
 							</div>
 						</div>
 						<br>
 					</div>
+					
+					<!-- INPUT FORM - CREATE NEW LIST -->
+
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
-							<ul class="list-group" ng-show="tasks.length > 0">
-								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
-									<div>
-										<p class="lead pull-left">{{todo.task}}</p>
-										<div class="pull-right">
-											<span type="button" ng-show="!todo.done"><img class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
-		    								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
+							<div id="new-list-form" class="form hidden">
+			        			<div class="input-group borderless">
+			          				<input id="list-name" type="text" class="form-control borderless italic" ng-model="list" placeholder="New To Do List">
+			          				<div id="create-new-list" class="input-group-btn">
+			          					<span id="add-new-btn" type="button" ng-click="addList()"><img class="icon" src="images/icon_add.svg"></span>
+			          				</div>
+			        			</div>
+
+
+			        			<!-- DISPLAY LIST LISTS -->
+								<ul class="list-group" ng-show="lists.length > 0">
+									<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
+										<div>
+											<p class="lead pull-left">{{todo.list}}</p>
+											<div class="input-group-btn">
+			          							<span type="button" ng-click="deleteList($index)"><img class="icon" src="images/icon_close.svg"></span>
+
+											</div>
 										</div>
-									</div>
-								</li>
-							</ul>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
-					
-		
-					<!-- Task List Ends Here -->
 
-					<!-- Form to create a todo task to add to a todo list -->
-		
+					<!-- END DISPLAY LIST OF LISTS -->
+
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6">
-							<span class="pull-right" type="button" ng-click="editTask($index)"><a class="underline" href="">save</a></span>	
+							<!-- SAVE  -->
+							<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">save</a></span>	
+			      			</div>
 		      			</div>
 			      	</div>
+			      	<!-- END LISTS -->
 		      	</div>
 			</div>
 		</div>
