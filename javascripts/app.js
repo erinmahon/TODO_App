@@ -4,7 +4,9 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
     $scope.tasks = [];
     $scope.lists = [];
     $scope.editIndex = false;
+
     // Handler functions in scope
+
     // add task
     $scope.addTask = function () {
         if( $scope.editIndex === false){
@@ -25,6 +27,10 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
         $scope.editIndex = false;
         $scope.list = '';
     }
+
+    // $scope.onEdit = function (index) {
+    //     $scope.tasks[index].done =
+    // }
     // edit task     
     $scope.editTask = function (index) {
       $scope.task = $scope.tasks[index].task;
@@ -45,10 +51,12 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
       $scope.lists.splice(index, 1);
     }
 
+
+
     }])
 
 $(document).ready(function(){
-    
+
     $("#new-list-btn").click(function() {
         $("#new-list-form").removeClass('hidden');
         $("#add-new-btn").hide();

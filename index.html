@@ -45,8 +45,8 @@
 								<h1>{{todo.list}}</h1>
 							</div>
 							<div class="pull-right">
-								<!-- EDIT TASK -->
-								<span ng-click="editTask($index)"><a class="underline" href="">edit</a></span>
+								<!-- EDIT TASKS -->
+								<span ng-click="onEdit(index)" type="button" ng-show="!todo.done.check-icon" ng-value="check-icon.img"><a class="underline" href="">edit</a>
 								<!-- SAVE TASK -->
 								<span type="button" ng-click=""><a class="underline" href="">save</a></span>
 							</div>	
@@ -61,8 +61,8 @@
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
 										<p class="lead pull-left">{{$index + 1}}. {{todo.task}}</p>
-										<div class="pull-right">
-											<span type="button" ng-show="!todo.done"><img class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
+										<div class="pull-right hidden">
+											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon"class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
 										</div>
 									</div>
