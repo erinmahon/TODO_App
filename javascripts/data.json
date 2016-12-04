@@ -1,0 +1,15 @@
+{
+	"name" : "NPC01",
+	"hitPoints" : 1,
+	"damage" : 2
+}
+
+// [{
+//   "lists": 
+//   [
+//     { "id": 1, "name": "Grocery List" },
+//     { "id": 2, "name": "Monday Schedule" },
+//     { "id": 3, "name": "Tuesday Schedule" },
+//     { "id": 4, "name": "Wednesday Schedule" }
+//   ]
+// }]

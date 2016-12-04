@@ -61,7 +61,7 @@
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
 										<p class="lead pull-left">{{$index + 1}}. {{todo.task}}</p>
-										<div class="pull-right hidden">
+										<div class="pull-right">
 											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon"class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
 										</div>
@@ -79,7 +79,7 @@
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8">
 		      				<div class="form">
 			        			<div class="input-group borderless">
-			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Click here to add new item">
+			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Click here to add new task">
 			          				<div class="input-group-btn">
 			          					<span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg"></span>
 			          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
@@ -110,7 +110,7 @@
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
-							<div id="new-list-form" class="form hidden">
+							<div id="new-list-form" class="form">
 			        			<div class="input-group borderless">
 			          				<input id="list-name" type="text" class="form-control borderless italic" ng-model="list" placeholder="New To Do List">
 			          				<div id="create-new-list" class="input-group-btn">
@@ -126,7 +126,6 @@
 											<p class="lead pull-left">{{todo.list}}</p>
 											<div class="input-group-btn">
 			          							<span type="button" ng-click="deleteList($index)"><img class="icon" src="images/icon_close.svg"></span>
-
 											</div>
 										</div>
 									</li>
@@ -140,9 +139,9 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6">
 							<!-- SAVE  -->
-							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
+							<!-- <div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 								<h1>{{todo.list}}</h1>
-							</div>
+							</div> -->
 							<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">save</a></span>	
 			      			</div>
 		      			</div>

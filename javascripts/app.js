@@ -2,8 +2,15 @@ var app = angular.module('toDoApp', []);
 app.controller('ToDoController', ['$scope', function ($scope)  {
    
     $scope.tasks = [];
-    $scope.lists = [];
+    $scope.lists = [
+    {list: 'Grocery List'},
+    {list: 'Monday Scehdule'},
+    {list: 'Tuesday Scehdule'},
+    {list: 'Wednesday Scehdule'}
+    ];
     $scope.editIndex = false;
+
+
 
     // Handler functions in scope
 
@@ -55,23 +62,23 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
 
     }])
 
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    $("#new-list-btn").click(function() {
-        $("#new-list-form").removeClass('hidden');
-        $("#add-new-btn").hide();
-    })
+//     $("#new-list-btn").click(function() {
+//         $("#new-list-form").removeClass('hidden');
+//         $("#add-new-btn").hide();
+//     })
 
-    $("#list-name").click(function() {
-        $("#add-new-btn").show();
-    })
+//     $("#list-name").click(function() {
+//         $("#add-new-btn").show();
+//     })
 
-    $("#add-new-btn").click(function() {
-        $("#new-list-form").hide();
-    })
+//     $("#add-new-btn").click(function() {
+//         $("#new-list-form").hide();
+//     })
 
 
-});
+// });
 
   
 
