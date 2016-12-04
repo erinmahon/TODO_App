@@ -41,8 +41,8 @@
 				<div id="todo_tasks" class="col-md-7 col-lg-7">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
-							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
-								<h1>{{todo.list}}</h1>
+							<div ng-show="todo in lists" ng-class="{disabled: todo.done}">
+								<h1>New Task List</h1>
 							</div>
 							<div class="pull-right">
 								<!-- EDIT TASKS -->
@@ -93,13 +93,17 @@
 				<!-- BEGIN LISTS -->
 
 				<div id="task_lists" class="col-md-5 col-lg-5">
-					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
 							<h1 id="style-overrides">Current Lists</h1>
-
 							<div class="pull-right">
+
+						<!-- On click, show x to delete task list next to task list and enable editing of task list titles -->
+
 								<span type="button" ng-click="editList($index)"><a class="underline" href="">edit</a></span>
+
+						<!-- 		On click, show add list input -->
+
 								<span id="new-list-btn" type="button"><a href="">+ add list</a></span>
 							</div>
 						</div>
@@ -112,21 +116,21 @@
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
 							<div id="new-list-form" class="form">
 			        			<div class="input-group borderless">
-			          				<input id="list-name" type="text" class="form-control borderless italic" ng-model="list" placeholder="New To Do List">
+			          				<input id="list-name" type="text" class="form-control borderless italic" ng-model="list" placeholder="Add New To Do List">
 			          				<div id="create-new-list" class="input-group-btn">
 			          					<span id="add-new-btn" type="button" ng-click="addList()"><img class="icon" src="images/icon_add.svg"></span>
 			          				</div>
 			        			</div>
-
+										
 
 			        			<!-- DISPLAY LIST LISTS -->
 								<ul class="list-group" ng-show="lists.length > 0">
 									<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 										<div>
-											<p class="lead pull-left">{{todo.list}}</p>
-											<div class="input-group-btn">
-			          							<span type="button" ng-click="deleteList($index)"><img class="icon" src="images/icon_close.svg"></span>
-											</div>
+											<p class="lead pull-left" type="button" ng-click="editList($index)">{{todo.list}}</p>
+											<div class="pull-right">
+			          							<span type="button"><img class="icon" src="images/icon_close.svg" ng-click="deleteList($index)"></span>
+			          						</div>
 										</div>
 									</li>
 								</ul>

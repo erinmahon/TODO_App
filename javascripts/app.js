@@ -1,6 +1,7 @@
 var app = angular.module('toDoApp', []);
 app.controller('ToDoController', ['$scope', function ($scope)  {
    
+
     $scope.tasks = [];
     $scope.lists = [
     {list: 'Grocery List'},
@@ -8,22 +9,13 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
     {list: 'Tuesday Scehdule'},
     {list: 'Wednesday Scehdule'}
     ];
+    
     $scope.editIndex = false;
 
 
 
     // Handler functions in scope
 
-    // add task
-    $scope.addTask = function () {
-        if( $scope.editIndex === false){
-            $scope.tasks.push({task: $scope.task, done: false})
-        } else {
-            $scope.tasks[$scope.editIndex].task = $scope.task;
-        }
-        $scope.editIndex = false;
-        $scope.task = '';
-    }
     //add list
     $scope.addList = function () {
         if( $scope.editIndex === false){
@@ -35,9 +27,27 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
         $scope.list = '';
     }
 
+    // add task
+    $scope.addTask = function () {
+        if( $scope.editIndex === false){
+            $scope.tasks.push({task: $scope.task, done: false})
+        } else {
+            $scope.tasks[$scope.editIndex].task = $scope.task;
+        }
+        $scope.editIndex = false;
+        $scope.task = '';
+    }
+
     // $scope.onEdit = function (index) {
     //     $scope.tasks[index].done =
     // }
+
+    // edit list    
+    $scope.editList = function (index) {
+      $scope.list = $scope.lists[index].list;
+      $scope.editIndex = index;
+    }
+
     // edit task     
     $scope.editTask = function (index) {
       $scope.task = $scope.tasks[index].task;
