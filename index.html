@@ -97,6 +97,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
 							<h1 id="style-overrides">Current Lists</h1>
+
 							<div class="pull-right">
 								<span type="button" ng-click="editList($index)"><a class="underline" href="">edit</a></span>
 								<span id="new-list-btn" type="button"><a href="">+ add list</a></span>
@@ -139,6 +140,9 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6">
 							<!-- SAVE  -->
+							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
+								<h1>{{todo.list}}</h1>
+							</div>
 							<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">save</a></span>	
 			      			</div>
 		      			</div>
