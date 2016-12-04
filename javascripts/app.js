@@ -12,6 +12,16 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
     
     $scope.editIndex = false;
 
+    // $scope.getClass = function getClass(idx, list) {
+    //     return {
+    // special: idx > list.length / 2 - 1
+    // }
+
+    $scope.getClass = function getClass (idx, list) {
+        return {
+            "special": idx > lists.length / 2 - 1 
+        }
+    }
 
 
     // Handler functions in scope
@@ -69,8 +79,12 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
     }
 
 
+   
+
 
     }])
+
+    
 
 // $(document).ready(function(){
 
