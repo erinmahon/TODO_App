@@ -36,33 +36,35 @@
 		<div class="container-fluid" ng-controller="ToDoController">
 
 
-		<!-- 	START TASK LIST -->
+		<!-- START NEW TASK LIST -->
 			<div class="row">
 				<div id="todo_tasks" class="col-md-7 col-lg-7">
 					
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7 border-bottom">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-4 col-lg-7 border-bottom top">
 							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}" ng-show="$last">
-								<h1 class="h1 pull-left">{{todo.list}}</h1>
-								<div class="input-group pull-right">
+								<div>
+									<h1 class="h1 pull-left">{{todo.list}}</h1>
+									<div class="input-group pull-right crud-actions">
 									<!-- EDIT TASKS -->
-									<span type="button"><a class="underline crud" href="">edit</a>
-									<!-- SAVE TASK --></span>
-									<span type="button"><a class="underline crud" href="">save</a></span>
-								</div>	
-								
+										<span type="button"><a class="underline crud" href="">edit</a></span>
+									<!-- SAVE TASK -->
+										<span type="button"><a class="underline crud" href="">save</a></span>
+									</div>	
+								</div>
 							</div>
 						</div>
 					</div>
+
 					<br>
 
 				<!-- 	START DISPLAY TASKS -->
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7 border-bottom">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-4 col-lg-7 border-bottom">
 							<ul class="list-group" ng-show="tasks.length > 0">
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
-										<p class="pull-left" ng-click="editTask($index)">{{$index + 1}}. {{todo.task}}</p>
+										<p class="pull-left italic" ng-click="editTask($index)">{{$index + 1}}. {{todo.task}}</p>
 										<div class="input-group-btn pull-right">
 											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon" class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
@@ -72,52 +74,53 @@
 							</ul>
 						</div>
 					</div>
-					<!-- END DISPLAY TASKS -->
+				<!-- END DISPLAY TASKS -->
 
 
 
-					<!-- INPUT FORM - CREATE TASKS -->
+				<!-- INPUT FORM - CREATE TASKS -->
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-4 col-lg-7">
 		      				<div class="form">
 			        			<div class="input-group borderless">
-			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Add New Task to To Do List">
+			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Add New Task">
 			          				<div class="input-group-btn">
 			          					<span type="button" ng-click="deleteTask($index)"><img class="icon icon-left" src="images/icon_close.svg"></span>
 			          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
 			          				</div>
 			        			</div>
 			      			</div>
-			      			<br>
 			      		</div>
 		      		</div>
+		      	<!-- END CREAT TASKS -->
 	      		</div>	
 
-
-				<!-- BEGIN LISTS -->
-
+				<!-- START TASK LISTS LIST -->
 				<div id="task_lists" class="col-md-5 col-lg-5">
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6 border-bottom-sm">
-							<h1 class="h1 pull-left">Current Lists</h1>
-							<div class="pull-right input-group">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-7 border-bottom-sm top">
+							<div>
+								<h1 class="h1 pull-left">Current Lists</h1>
+								<div class="pull-right input-group crud-actions">
 
-						<!-- On click, show x to delete task list next to task list and enable editing of task list titles -->
+									<!-- On click, show x to delete task list next to task list and enable editing of task list titles -->
 
-								<span type="button" ng-click="editList($index)"><a class="underline crud" href="">edit</a></span>
+									<span type="button" ng-click="editList($index)"><a class="underline crud" href="">edit</a></span>
 
-						<!-- 		On click, show add list input -->
+									<!-- On click, show add list input -->
 
-								<span id="new-list-btn" type="button"><a class="crud" href="">+ add list</a></span>
-								<br>
+									<span id="new-list-btn" type="button"><a class="underline crud" href="">+ add list</a></span>
+
+								</div>
 							</div>
 						</div>
 					</div>
+
 					
 					<!-- INPUT FORM - CREATE NEW LIST -->
 
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-7">
 							<div class="form">
 			        			<div class="input-group borderless">
 			          				<input type="text" required="required" class="form-control borderless italic" ng-model="list" placeholder="Add New To Do List">
@@ -129,10 +132,11 @@
 			        	</div>
 			        </div>
 
+
 			        <!-- DISPLAY LIST LISTS -->
 
 			        <div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6 border-bottom-sm">		
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-7 border-bottom-sm">		
 							<ul id="todo-lists-list"class="list-group" ng-show="lists.length > 0">
 								<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 									<div>
@@ -150,11 +154,11 @@
 					<!-- END DISPLAY LIST OF LISTS -->
 
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset- col-lg-6">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-7">
 							<!-- SAVE  -->
 							<!-- <div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 								<h1>{{todo.list}}</h1> -->
-							<div class="pull-right input-group">
+							<div class="pull-right input-group crud-actions bottom">
 								<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">Save</a></span>	
 			      			</div>
 		      			</div>

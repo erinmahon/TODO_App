@@ -33,9 +33,6 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-
-
-
 // Header
 
 header {
@@ -43,11 +40,11 @@ header {
 	width: 100%;
 	position: relative;
 	background-color: $default-teal;
-	max-height: 100px;
-	border-bottom: 2px solid $default-tan;
+	max-height: 120px;
+	border-bottom: 4px solid $default-tan;
 	z-index: 2;
 	img.brolik_logo {
-   		max-width: 100px;
+   		max-width: 120px;
    		display: block;
   		margin: 0 auto;
   		padding: 3.25% 0% 2% 0%;
@@ -58,7 +55,7 @@ header {
 
 img.cover {
 	width: 100%;
-	margin-top: -30%;
+	margin-top: -29.5%;
 	-webkit-filter: opacity(.5);
 	filter: opacity(.5);
 }
@@ -71,8 +68,8 @@ body.ng-scope {
 
 .container-fluid {
 	background-color: $default-white;
-	border-top: 2px solid $default-tan;
-	margin-top: -25%;
+	border-top: 4px solid $default-tan;
+	margin-top: -24%;
 	position: relative;
 	border-bottom: 10px solid $default-teal;
 	padding: 5% 0%;
@@ -102,11 +99,19 @@ ul#todo-lists-list {
 // }
 
 .crud {
-	border: 2px solid black;
+	// border: 2px solid black;
 	margin-left: 20px;
-	margin-top: 5px;
 }
 
-img.icon-left {
+.icon-left {
 	margin-right: 20px;
+	margin-left: 10px;
+}
+
+.crud-actions {
+	margin-top: 30px;
+}
+
+.bottom {
+	margin-top: 20px;
 }

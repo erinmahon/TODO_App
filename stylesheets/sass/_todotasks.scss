@@ -23,6 +23,7 @@ input.borderless {
 
 
 a.underline:active {
+	padding-bottom: 5px;
 	border-bottom: 1px solid $default-gray;
 	-webkit-transition: border 500ms ease;
 	-moz-transition: border 500ms ease;
@@ -32,17 +33,21 @@ a.underline:active {
 }
 
 a.underline:hover {
-  border-bottom: 1px solid $default-gray;
+	padding-bottom: 5px;
+	border-bottom: 1px solid $default-gray;
 }
 
 div.border-bottom {
-	border-bottom: 2px solid $default-tan;
+	border-bottom: 3px solid $default-tan;
 }
 
 div.border-bottom-sm {
 	border-bottom: 1px solid $default-tan;
 }
 
+div.top {
+	padding-bottom: 1%;
+}
 
 
 

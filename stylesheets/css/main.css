@@ -13,6 +13,7 @@ input.borderless {
   font-style: italic; }
 
 a.underline:active {
+  padding-bottom: 5px;
   border-bottom: 1px solid #797979;
   -webkit-transition: border 500ms ease;
   -moz-transition: border 500ms ease;
@@ -21,13 +22,17 @@ a.underline:active {
   transition: border 500ms ease; }
 
 a.underline:hover {
+  padding-bottom: 5px;
   border-bottom: 1px solid #797979; }
 
 div.border-bottom {
-  border-bottom: 2px solid #d6bfab; }
+  border-bottom: 3px solid #d6bfab; }
 
 div.border-bottom-sm {
   border-bottom: 1px solid #d6bfab; }
+
+div.top {
+  padding-bottom: 1%; }
 
 html {
   background-color: #000000; }
@@ -52,18 +57,18 @@ header {
   width: 100%;
   position: relative;
   background-color: #1eacaa;
-  max-height: 100px;
-  border-bottom: 2px solid #d6bfab;
+  max-height: 120px;
+  border-bottom: 4px solid #d6bfab;
   z-index: 2; }
   header img.brolik_logo {
-    max-width: 100px;
+    max-width: 120px;
     display: block;
     margin: 0 auto;
     padding: 3.25% 0% 2% 0%; }
 
 img.cover {
   width: 100%;
-  margin-top: -30%;
+  margin-top: -29.5%;
   -webkit-filter: opacity(0.5);
   filter: opacity(0.5); }
 
@@ -72,8 +77,8 @@ body.ng-scope {
 
 .container-fluid {
   background-color: #ffffff;
-  border-top: 2px solid #d6bfab;
-  margin-top: -25%;
+  border-top: 4px solid #d6bfab;
+  margin-top: -24%;
   position: relative;
   border-bottom: 10px solid #1eacaa;
   padding: 5% 0%;
@@ -93,11 +98,16 @@ ul#todo-lists-list li.list-group-item {
   padding: 10px; }
 
 .crud {
-  border: 2px solid black;
-  margin-left: 20px;
-  margin-top: 5px; }
+  margin-left: 20px; }
 
-img.icon-left {
-  margin-right: 20px; }
+.icon-left {
+  margin-right: 20px;
+  margin-left: 10px; }
+
+.crud-actions {
+  margin-top: 30px; }
+
+.bottom {
+  margin-top: 20px; }
 
 /*# sourceMappingURL=main.css.map */
