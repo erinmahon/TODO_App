@@ -6,10 +6,7 @@
 	position: relative;
 }
 
-img.icon {
-	max-height: 18px;
-	padding: 10%;
-}
+
 
 li.borderless {
 	border: none;
@@ -23,6 +20,7 @@ input.borderless {
 .italic {
 	font-style: italic;
 }
+
 
 a.underline:active {
 	border-bottom: 1px solid $default-gray;

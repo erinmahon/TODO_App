@@ -12,6 +12,7 @@ html {
 body {
 	font-family: $font-stack;
 	color: $default-gray;
+	font-size: 18px;
 }
 	
 h1.h1 {
@@ -19,7 +20,7 @@ h1.h1 {
 }
 
 span, p, li {
-	font-size: 18px;
+	// font-size: 18px;
 }
 
 .form-control {
@@ -30,6 +31,8 @@ a:link, a:visited, a:hover, a:active {
     color: $default-gray;
     text-decoration: none;
 }
+
+
 
 
 
@@ -76,7 +79,31 @@ body.ng-scope {
 	min-height: 400px;
 }
 
+img.icon {
+	max-height: 18px;
+	margin-top: 35%;
+	// margin-left: 20px;
+}
+.list-group-item {
+	padding: 20px;
+}
+
+input {
+	margin: 15px 0px;
+}
+
+ul#todo-lists-list {
+	li.list-group-item{
+		padding: 10px;
+	}
+}
 // div.hidden {
 // 	display: none;
 // }
+
+.crud {
+	border: 2px solid black;
+	margin-left: 20px;
+	margin-top: 5px;
+}
 

@@ -39,17 +39,19 @@
 		<!-- 	START TASK LIST -->
 			<div class="row">
 				<div id="todo_tasks" class="col-md-7 col-lg-7">
+					
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
 							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}" ng-show="$last">
-								<h1 class="h1">{{todo.list}}</h1>
+								<h1 class="h1 pull-left">{{todo.list}}</h1>
+								<div class="input-group pull-right">
+									<!-- EDIT TASKS -->
+									<span type="button"><a class="underline crud" href="">edit</a>
+									<!-- SAVE TASK --></span>
+									<span type="button"><a class="underline crud" href="">save</a></span>
+								</div>	
+								
 							</div>
-							<div class="pull-right">
-								<!-- EDIT TASKS -->
-								<span ng-click="onEdit(index)" type="button" ng-show="!todo.done.check-icon" ng-value="check-icon.img"><a class="underline" href="">edit</a>
-								<!-- SAVE TASK -->
-								<span type="button" ng-click=""><a class="underline" href="">save</a></span>
-							</div>	
 						</div>
 					</div>
 					<br>
@@ -61,8 +63,8 @@
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
 										<p class="pull-left" ng-click="editTask($index)">{{$index + 1}}. {{todo.task}}</p>
-										<div class="pull-right">
-											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon"class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
+										<div class="input-group-btn pull-right">
+											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon" class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
 										</div>
 									</div>
@@ -95,46 +97,51 @@
 				<div id="task_lists" class="col-md-5 col-lg-5">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
-							<h1 class="h1">Current Lists</h1>
-							<div class="pull-right">
+							<h1 class="h1 pull-left">Current Lists</h1>
+							<div class="pull-right input-group">
 
 						<!-- On click, show x to delete task list next to task list and enable editing of task list titles -->
 
-								<span type="button" ng-click="editList($index)"><a class="underline" href="">edit</a></span>
+								<span type="button" ng-click="editList($index)"><a class="underline crud" href="">edit</a></span>
 
 						<!-- 		On click, show add list input -->
 
-								<span id="new-list-btn" type="button"><a href="">+ add list</a></span>
+								<span id="new-list-btn" type="button"><a class="crud" href="">+ add list</a></span>
+								<br>
 							</div>
 						</div>
-						<br>
 					</div>
 					
 					<!-- INPUT FORM - CREATE NEW LIST -->
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
-							<div id="new-list-form" class="form">
+							<div class="form">
 			        			<div class="input-group borderless">
-			          				<input id="list-name" type="text" class="form-control borderless italic" ng-model="list" placeholder="Add New To Do List">
-			          				<div id="create-new-list" class="input-group-btn">
-			          					<span id="add-new-btn" type="button" ng-click="addList()"><img class="icon" src="images/icon_add.svg"></span>
+			          				<input type="text" required="required" class="form-control borderless italic" ng-model="list" placeholder="Add New To Do List">
+			          				<div class="input-group-btn">
+			          					<span type="button" ng-click="addList()"><img class="icon" src="images/icon_add.svg"></span>
 			          				</div>
 			        			</div>
-										
+			        		</div>
+			        	</div>
+			        </div>
 
-			        			<!-- DISPLAY LIST LISTS -->
-								<ul class="list-group" ng-show="lists.length > 0">
-									<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
-										<div>
-											<p class="pull-left" type="button" ng-click="editList($index)">{{todo.list}}</p>
-											<div class="pull-right">
-			          							<span type="button"><img class="icon" src="images/icon_close.svg" ng-click="deleteList($index)"></span>
-			          						</div>
-										</div>
-									</li>
-								</ul>
-							</div>
+			        <!-- DISPLAY LIST LISTS -->
+
+			        <div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">		
+							<ul id="todo-lists-list"class="list-group" ng-show="lists.length > 0">
+								<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
+									<div>
+										<p class="pull-left" type="button" ng-click="editList($index)">{{todo.list}}</p>
+										<div class="pull-right input-group-btn">
+		          							<span type="button"><img class="icon" src="images/icon_close.svg" ng-click="deleteList($index)"></span>
+		          						</div>
+									</div>
+								</li>
+							</ul>
+							
 						</div>
 					</div>
 
@@ -144,13 +151,13 @@
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6">
 							<!-- SAVE  -->
 							<!-- <div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
-								<h1>{{todo.list}}</h1>
-							</div> -->
-							<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">save</a></span>	
+								<h1>{{todo.list}}</h1> -->
+							<div class="pull-right input-group">
+								<span id="" class="pull-right crud" type="button" ng-click="editTask($index)" value="save"><a class="underline" href="">Save</a></span>	
 			      			</div>
 		      			</div>
 			      	</div>
-			      	<!-- END LISTS -->
+			      	<!-- END LISTS
 		      	</div>
 			</div>
 		</div>
