@@ -53,18 +53,17 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none; }
 
 header {
-  margin-top: -2%;
   width: 100%;
   position: relative;
   background-color: #1eacaa;
-  max-height: 120px;
+  max-height: 100px;
   border-bottom: 4px solid #d6bfab;
   z-index: 2; }
   header img.brolik_logo {
-    max-width: 120px;
+    max-width: 150px;
     display: block;
     margin: 0 auto;
-    padding: 3.25% 0% 2% 0%; }
+    padding: 1% 0%; }
 
 img.cover {
   width: 100%;
