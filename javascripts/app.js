@@ -23,7 +23,6 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
         }
     }
 
-
     // Handler functions in scope
 
     //add list
@@ -73,18 +72,12 @@ app.controller('ToDoController', ['$scope', function ($scope)  {
       $scope.tasks.splice(index, 1);
     }
 
-    //delete list
+    // delete list
     $scope.deleteList = function (index) {
       $scope.lists.splice(index, 1);
     }
 
-
-   
-
-
-    }])
-
-    
+    }])   
 
 // $(document).ready(function(){
 
