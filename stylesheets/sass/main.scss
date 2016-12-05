@@ -7,13 +7,31 @@ html {
 	background-color: $default-black;
 }
 
-.body {
+
+
+body {
 	font-family: $font-stack;
-	font-size: 18px;
-	h1.h1 {
-		font-size: 1.722em;
-	}
+	color: $default-gray;
 }
+	
+h1.h1 {
+	font-size: 1.722em;
+}
+
+span, p, li {
+	font-size: 18px;
+}
+
+.form-control {
+	font-size: 18px;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: $default-gray;
+    text-decoration: none;
+}
+
+
 
 // Header
 

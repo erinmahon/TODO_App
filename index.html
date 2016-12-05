@@ -26,7 +26,7 @@
 	    <script type="text/javascript" src="javascripts/angular.min.js"></script>
 	    <script type="text/javascript" src="javascripts/app.js"></script>
 	</head>
-	<body class="body" ng-app="toDoApp">
+	<body id="style-overrides" ng-app="toDoApp">
 		<header>
 			<img class="brolik_logo" src="images/Logo.svg">
 		</header>
@@ -42,7 +42,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
 							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}" ng-show="$last">
-								<h1>{{todo.list}}</h1>
+								<h1 class="h1">{{todo.list}}</h1>
 							</div>
 							<div class="pull-right">
 								<!-- EDIT TASKS -->
@@ -60,7 +60,7 @@
 							<ul class="list-group" ng-show="tasks.length > 0">
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
-										<p class="lead pull-left">{{$index + 1}}. {{todo.task}}</p>
+										<p class="pull-left" ng-click="editTask($index)">{{$index + 1}}. {{todo.task}}</p>
 										<div class="pull-right">
 											<span type="button" ng-show="!todo.done"><img ng-value="check-icon" id="check-icon"class="icon" src="images/icon_check.svg" ng-click="doneTask($index)"></span>
 	        								<span type="button" ng-show="todo.done"><img class="icon" src="images/icon_close.svg" ng-click="deleteTask($index)"></span>
@@ -95,7 +95,7 @@
 				<div id="task_lists" class="col-md-5 col-lg-5">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
-							<h1 id="style-overrides">Current Lists</h1>
+							<h1 class="h1">Current Lists</h1>
 							<div class="pull-right">
 
 						<!-- On click, show x to delete task list next to task list and enable editing of task list titles -->
@@ -127,7 +127,7 @@
 								<ul class="list-group" ng-show="lists.length > 0">
 									<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 										<div>
-											<p class="lead pull-left" type="button" ng-click="editList($index)">{{todo.list}}</p>
+											<p class="pull-left" type="button" ng-click="editList($index)">{{todo.list}}</p>
 											<div class="pull-right">
 			          							<span type="button"><img class="icon" src="images/icon_close.svg" ng-click="deleteList($index)"></span>
 			          						</div>
