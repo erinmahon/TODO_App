@@ -41,7 +41,7 @@
 				<div id="todo_tasks" class="col-md-7 col-lg-7">
 					
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7 border-bottom">
 							<div ng-repeat="todo in lists" ng-class="{disabled: todo.done}" ng-show="$last">
 								<h1 class="h1 pull-left">{{todo.list}}</h1>
 								<div class="input-group pull-right">
@@ -58,7 +58,7 @@
 
 				<!-- 	START DISPLAY TASKS -->
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8 border-bottom">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7 border-bottom">
 							<ul class="list-group" ng-show="tasks.length > 0">
 								<li class="list-group-item borderless clearfix task" ng-repeat="todo in tasks" ng-class="{disabled: todo.done}"> 
 									<div>
@@ -78,25 +78,27 @@
 
 					<!-- INPUT FORM - CREATE TASKS -->
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-4 col-md-8 col-md-offset-4 col-lg-8">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-4 col-md-7 col-md-offset-4 col-lg-7">
 		      				<div class="form">
 			        			<div class="input-group borderless">
 			          				<input type="text" required="required" class="form-control borderless italic" ng-model="task" placeholder="Add New Task to To Do List">
 			          				<div class="input-group-btn">
-			          					<span type="button" ng-click="deleteTask($index)"><img class="icon" src="images/icon_close.svg"></span>
+			          					<span type="button" ng-click="deleteTask($index)"><img class="icon icon-left" src="images/icon_close.svg"></span>
 			          					<span type="button" ng-click="addTask()"><img class="icon" src="images/icon_add.svg"></span>
 			          				</div>
 			        			</div>
 			      			</div>
+			      			<br>
 			      		</div>
 		      		</div>
 	      		</div>	
+
 
 				<!-- BEGIN LISTS -->
 
 				<div id="task_lists" class="col-md-5 col-lg-5">
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6 border-bottom-sm">
 							<h1 class="h1 pull-left">Current Lists</h1>
 							<div class="pull-right input-group">
 
@@ -115,7 +117,7 @@
 					<!-- INPUT FORM - CREATE NEW LIST -->
 
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6">
 							<div class="form">
 			        			<div class="input-group borderless">
 			          				<input type="text" required="required" class="form-control borderless italic" ng-model="list" placeholder="Add New To Do List">
@@ -130,7 +132,7 @@
 			        <!-- DISPLAY LIST LISTS -->
 
 			        <div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6 border-bottom-sm">		
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset-1 col-lg-6 border-bottom-sm">		
 							<ul id="todo-lists-list"class="list-group" ng-show="lists.length > 0">
 								<li class="list-group-item borderless clearfix list" ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 									<div>
@@ -148,7 +150,7 @@
 					<!-- END DISPLAY LIST OF LISTS -->
 
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-6 col-md-offset-2 col-lg-6">
+						<div class="col-xs-offset-1 col-xs-10 col-sm-offset 1 col-sm-10 col-md-offset-1 col-md-6 col-md-offset- col-lg-6">
 							<!-- SAVE  -->
 							<!-- <div ng-repeat="todo in lists" ng-class="{disabled: todo.done}">
 								<h1>{{todo.list}}</h1> -->
@@ -157,7 +159,7 @@
 			      			</div>
 		      			</div>
 			      	</div>
-			      	<!-- END LISTS
+			      	<!-- END LISTS -->
 		      	</div>
 			</div>
 		</div>
